@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
 const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
-    const { _id, name, quantity, supplier, taste, category, details, photoURL } = coffee;
+    const { _id, name, price, supplier, taste, category, details, chef, photoURL } = coffee;
 
     const handleDelete = _id => {
         console.log(_id);
@@ -44,11 +44,19 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
         <div className="card card-side bg-base-100 shadow-xl">
             <figure><img src={photoURL} alt="Movie" /></figure>
             <div className="flex justify-between w-full pr-4">
-                <div className='pt-10'>
-                    <h2 className="card-title">Name: {name}</h2>
-                    <p>{quantity}</p>
-                    <p>{supplier}</p>
-                    <p>{taste}</p>
+                <div className='pt-10 raleway-regular'>
+                    <div className='flex'>
+                        <p className='mr-2 font-bold'>Name:</p>
+                        <p>{name}</p>
+                    </div>
+                    <div className='flex'>
+                        <p className='mr-2 font-bold'>Chef:</p>
+                        <p>{chef}</p>
+                    </div>
+                    <div className='flex'>
+                        <p className='mr-2 font-bold'>Price:</p>
+                        <p>{price} Taka</p>
+                    </div>
                 </div>
                 <div className="card-actions justify-end">
                     <div className="join join-vertical gap-2 mt-3">
